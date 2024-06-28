@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>HardwareE_commerce.Services</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Services\AddressService.cs~RF154c638.TMP" />
+    <None Remove="Services\AddressService.cs~RF1561780.TMP" />
+    <None Remove="Services\ServiceBase.cs~RF9e081d.TMP" />
+    <None Remove="Services\UserService.cs~RF152fe2a.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HardwareE-commerce.Domain\HardwareE-commerce.Domain.csproj" />
+    <ProjectReference Include="..\HardwareE-commerce.Infrastructure\HardwareE-commerce.Infrastructure.csproj" />
+    <ProjectReference Include="..\HardwareE-commerce.Validation\HardwareE-commerce.Validation.csproj" />
+  </ItemGroup>
+
+</Project>

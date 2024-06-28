@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>false</InvariantGlobalization>
+    <RootNamespace>HardwareE_commerce</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Controllers\AddressController.cs~RF18bd782.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HardwareE-commerce.Domain\HardwareE-commerce.Domain.csproj" />
+    <ProjectReference Include="..\HardwareE-commerce.Infrastructure\HardwareE-commerce.Infrastructure.csproj" />
+    <ProjectReference Include="..\HardwareE-commerce.Services\HardwareE-commerce.Services.csproj" />
+    <ProjectReference Include="..\HardwareE-commerce.Validation\HardwareE-commerce.Validation.csproj" />
+  </ItemGroup>
+
+</Project>

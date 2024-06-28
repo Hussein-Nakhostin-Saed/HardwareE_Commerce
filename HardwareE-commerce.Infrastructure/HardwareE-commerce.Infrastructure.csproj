@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>HardwareE_commerce.Infrastructure</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Configurations\PermissionsConfiguration.cs~RF19db925.TMP" />
+    <None Remove="Configurations\UserConfiguration.cs~RF10afd6d.TMP" />
+    <None Remove="Repositories\CardRepository.cs~RF2a6315e.TMP" />
+    <None Remove="Repositories\RoleRepository.cs~RF1b7e6ed.TMP" />
+    <None Remove="Seed\RoleSeed.cs~RF1f7eafd.TMP" />
+    <None Remove="Seed\RoleSeed.cs~RF20944d3.TMP" />
+    <None Remove="Seed\SeedBase.cs~RF574b98.TMP" />
+    <None Remove="Seed\UserSeed.cs~RF1f5270b.TMP" />
+    <None Remove="Seed\UserSeed.cs~RF20b9e91.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HardwareE-commerce.Domain\HardwareE-commerce.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
