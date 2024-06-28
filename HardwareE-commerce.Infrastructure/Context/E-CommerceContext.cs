@@ -15,13 +15,13 @@ public class E_CommerceContext : DbContext
     public DbSet<Permission> Permissions { get; set; }
     public DbSet<Role> Roles { get; set; }
     public DbSet<User> Users { get; set; }
-    public DbSet<Order> Orders { get; set; }
-    public DbSet<Payment> Payments { get; set; }
-    public DbSet<OrderItem> OrderItems { get; set; }
+    //public DbSet<Order> Orders { get; set; }
+    //public DbSet<Payment> Payments { get; set; }
+    //public DbSet<OrderItem> OrderItems { get; set; }
     public DbSet<Category> Categories { get; set; }
     public DbSet<Product> Products { get; set; }
-    public DbSet<Card> Cards { get; set; }
-    public DbSet<CardItem> CardItems { get; set; }
+    //public DbSet<Card> Cards { get; set; }
+    //public DbSet<CardItem> CardItems { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

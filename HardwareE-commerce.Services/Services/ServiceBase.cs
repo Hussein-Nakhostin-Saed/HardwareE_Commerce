@@ -13,7 +13,7 @@ public class ServiceBase<TAddDto, TEditDto, TDto, TEntity> where TAddDto : AddDt
         _mapper = mapper;
     }
 
-    public async Task InsertAsync(TAddDto dto)
+    public virtual async Task InsertAsync(TAddDto dto)
     {
         var entity = _mapper.Map<TEntity>(dto);
         entity.CreateAt = DateTime.Now;
@@ -23,7 +23,7 @@ public class ServiceBase<TAddDto, TEditDto, TDto, TEntity> where TAddDto : AddDt
         await _repository.SaveChanges();
     }
 
-    public async Task UpdateAsync(TEditDto dto)
+    public virtual async Task UpdateAsync(TEditDto dto)
     {
         var entity = await _repository.GetById(dto.Id);
         _mapper.Map(entity, dto);
