@@ -35,12 +35,4 @@ public class SecurityController : SecureBaseController
     {
         await HttpContext.SignOutAsync();
     }
-
-    [Authorization]
-    [HttpPost]
-    [Route("changepassword")]
-    public async Task ChangePassword(ChangePasswordDto dto)
-    {
-        await _securityService.ChangePassword(dto);
-    }
 }

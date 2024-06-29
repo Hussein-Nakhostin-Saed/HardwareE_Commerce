@@ -11,15 +11,17 @@ public class PermissionSignatures
     public const string RoleView = "3JZL7D";
     public const string CanEditRole = "YA87m0";
 
-    public const string CategoryView = "";
-    public const string CanEditCategory = "";
+    public const string CategoryView = "g1+w==";
+    public const string CanEditCategory = "miXDnP";
 
-    public const string ProductView = "";
-    public const string CanEditProduct = "";
+    public const string ProductView = "CzCPga";
+    public const string CanEditProduct = "rMmNcw";
 
-    public const string CardView = "";
-    public const string CanEditCard = "";
+    public const string CardUserView = "XPW1mK";
+    public const string CardView = "bPBYdV";
+    public const string CanEditCard = "K2i1Yr";
+    public const string UserCanEditCard = "KheUeh";
 
-    public const string PaymentView = "";
-    public const string CanEditPayment = "";
+    public const string PaymentView = "AtBKEb";
+    public const string CanEditPayment = "XZ56Zi";
 }

@@ -8,5 +8,7 @@ public static class SeedBase
         var permisseions = PermissionSeed.Seed(modelBuilder);
         PermissionRoleSeed.Seed(modelBuilder, roles, permisseions);
         UserSeed.Seed(modelBuilder, roles);
+        var category = CategorySeed.Seed(modelBuilder);
+        ProductSeed.Seed(modelBuilder, category.Id);
     }
 }

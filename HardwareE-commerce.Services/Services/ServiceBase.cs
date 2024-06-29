@@ -26,7 +26,7 @@ public class ServiceBase<TAddDto, TEditDto, TDto, TEntity> where TAddDto : AddDt
     public virtual async Task UpdateAsync(TEditDto dto)
     {
         var entity = await _repository.GetById(dto.Id);
-        _mapper.Map(entity, dto);
+        _mapper.Map(dto, entity);
         entity.ModifiedAt = DateTime.Now;
         entity.DocumentState = DocumentState.Modified;
 
@@ -45,9 +45,10 @@ public class ServiceBase<TAddDto, TEditDto, TDto, TEntity> where TAddDto : AddDt
     public async Task DeleteAsync(int id)
     {
         await _repository.Delete(id);
+        await _repository.SaveChanges();
     }
 
-    public async Task<IEnumerable<TDto>> GetAllAsync()
+    public virtual async Task<IEnumerable<TDto>> GetAllAsync()
     {
         var entities = await _repository.GetAll(x => x.DocumentState != DocumentState.Deleted);
         var dtos = _mapper.MapCollection<TEntity, TDto>(entities);

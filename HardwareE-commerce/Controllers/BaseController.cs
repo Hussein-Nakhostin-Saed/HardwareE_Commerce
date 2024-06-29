@@ -31,7 +31,4 @@ public class BaseController<TAddDto, TEditDto, TDto, TEntity>  : SecureBaseContr
 
     [HttpGet]
     public virtual async Task<IEnumerable<TDto>> GetAllAsync() => await _service.GetAllAsync();
-
-    [HttpGet]
-    public virtual async Task<PagableListDtoBase<TDto>> GetAllPageable(PagableListDtoBase<TDto> dto) => await _service.GetAllPageable(dto);
 }

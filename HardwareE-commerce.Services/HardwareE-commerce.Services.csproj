@@ -10,6 +10,7 @@
   <ItemGroup>
     <None Remove="Services\AddressService.cs~RF154c638.TMP" />
     <None Remove="Services\AddressService.cs~RF1561780.TMP" />
+    <None Remove="Services\PaymentService.cs~RF8b09a0.TMP" />
     <None Remove="Services\ServiceBase.cs~RF9e081d.TMP" />
     <None Remove="Services\UserService.cs~RF152fe2a.TMP" />
   </ItemGroup>

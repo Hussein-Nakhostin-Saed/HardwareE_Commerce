@@ -9,4 +9,10 @@ public class Category : MutableEntity
     public Category()
     {
     }
+
+    public Category(int id, string name)
+    {
+        Id = id;
+        Name = name;
+    }
 }

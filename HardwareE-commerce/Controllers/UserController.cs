@@ -34,9 +34,4 @@ public class UserController : BaseController<UserAddDto, UserEditDto, UserDto, U
     [Route("")]
     [HttpGet]
     public override Task<IEnumerable<UserDto>> GetAllAsync() => base.GetAllAsync();
-
-    [Authorization(PermissionSignatures.UserView)]
-    [Route("all/pagination")]
-    [HttpGet]
-    public override Task<PagableListDtoBase<UserDto>> GetAllPageable(PagableListDtoBase<UserDto> dto) => base.GetAllPageable(dto);
 }

@@ -4,21 +4,23 @@ namespace HardwareE_commerce.Controllers;
 
 [Route("api/card")]
 [ApiController]
-public class CardController : BaseController<CardAddDto, CardEditDto, CardDto, Card>
+public class CardController : BaseController<CardItemAddDto, CardItemEditDto, CardDto, Card>
 {
+    private readonly CardService _cardService;
     public CardController(CardService cardService) : base(cardService)
     {
+        _cardService = cardService;
     }
 
-    [Authorization(PermissionSignatures.CanEditCard)]
+    [Authorization(PermissionSignatures.UserCanEditCard)]
     [Route("")]
     [HttpPost]
-    public override Task InsertAsync(CardAddDto dto) => base.InsertAsync(dto);
+    public override Task InsertAsync(CardItemAddDto dto) => _cardService.InsertAsync(dto, UserContext.UserId);
 
     [Authorization(PermissionSignatures.CanEditCard)]
     [Route("")]
     [HttpPut]
-    public override Task UpdateAsync(CardEditDto dto) => base.UpdateAsync(dto);
+    public override Task UpdateAsync(CardItemEditDto dto) => base.UpdateAsync(dto);
 
     [Authorization(PermissionSignatures.CanEditCard)]
     [Route("")]
@@ -33,11 +35,10 @@ public class CardController : BaseController<CardAddDto, CardEditDto, CardDto, C
     [Authorization(PermissionSignatures.CardView)]
     [Route("")]
     [HttpGet]
-    public override Task<IEnumerable<CardDto>> GetAllAsync() => base.GetAllAsync();
+    public override async Task<IEnumerable<CardDto>> GetAllAsync() => await _cardService.GetAllAsync();
 
-    [Authorization(PermissionSignatures.CardView)]
-    [Route("all/pagination")]
+    [Authorization(PermissionSignatures.CardUserView)]
+    [Route("user/all")]
     [HttpGet]
-    public override Task<PagableListDtoBase<CardDto>> GetAllPageable(PagableListDtoBase<CardDto> dto) => base.GetAllPageable(dto);
-
+    public async Task<IEnumerable<CardDto>> GetAllByUserAsync() => await _cardService.GetAllByUserAsync(UserContext.UserId);
 }

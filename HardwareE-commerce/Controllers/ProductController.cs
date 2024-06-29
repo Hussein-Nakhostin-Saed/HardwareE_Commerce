@@ -34,9 +34,4 @@ public class ProductController : BaseController<ProductAddDto, ProductEditDto, P
     [Route("")]
     [HttpGet]
     public override Task<IEnumerable<ProductDto>> GetAllAsync() => base.GetAllAsync();
-
-    [Authorization(PermissionSignatures.ProductView)]
-    [Route("all/pagination")]
-    [HttpGet]
-    public override Task<PagableListDtoBase<ProductDto>> GetAllPageable(PagableListDtoBase<ProductDto> dto) => base.GetAllPageable(dto);
 }

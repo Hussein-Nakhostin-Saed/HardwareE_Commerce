@@ -1,4 +1,6 @@
-﻿namespace HardwareE_commerce.Domain;
+﻿using System.Collections.ObjectModel;
+
+namespace HardwareE_commerce.Domain;
 
 public class Card : MutableEntity
 {
@@ -7,8 +9,10 @@ public class Card : MutableEntity
     public int UserId { get; set; }
     public ICollection<CardItem> CardItems { get; set; }
 
-    public Card()
+    public Card(int totalCount, int userId)
     {
-        
+        TotalCount = totalCount;
+        UserId = userId;
+        CardItems = new Collection<CardItem>();
     }
 }

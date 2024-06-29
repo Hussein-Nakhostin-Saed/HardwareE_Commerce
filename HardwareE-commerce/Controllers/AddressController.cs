@@ -1,4 +1,5 @@
 ﻿
+using HardwareE_commerce.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HardwareE_commerce.Controllers;
@@ -7,8 +8,10 @@ namespace HardwareE_commerce.Controllers;
 [ApiController]
 public class AddressController : BaseController<AddressAddDto, AddressEditDto, AddressDto, Address>
 {
+    private readonly AddressService _service;
     public AddressController(AddressService service) : base(service)
     {
+        _service = service;
     }
 
     [Authorization(PermissionSignatures.CanEditAddress)]
@@ -37,7 +40,7 @@ public class AddressController : BaseController<AddressAddDto, AddressEditDto, A
     public override Task<IEnumerable<AddressDto>> GetAllAsync() => base.GetAllAsync();
 
     [Authorization(PermissionSignatures.AddressView)]
-    [Route("all/pagination")]
+    [Route("user/all")]
     [HttpGet]
-    public override Task<PagableListDtoBase<AddressDto>> GetAllPageable(PagableListDtoBase<AddressDto> dto) => base.GetAllPageable(dto);
+    public async Task<IEnumerable<AddressDto>> GetAllByUserAsync() => await _service.GetAllByUserAsync(UserContext.UserId);
 }

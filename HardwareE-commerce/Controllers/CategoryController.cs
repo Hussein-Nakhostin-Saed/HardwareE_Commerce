@@ -14,7 +14,7 @@ public class CategoryController : BaseController<CategoryAddDto, CategoryEditDto
     [Authorization(PermissionSignatures.CanEditCategory)]
     [Route("")]
     [HttpPost]
-    public override Task InsertAsync(CategoryAddDto dto) => base.InsertAsync(dto);
+    public override Task InsertAsync([FromBody] CategoryAddDto dto) => base.InsertAsync(dto);
 
     [Authorization(PermissionSignatures.CanEditCategory)]
     [Route("")]
@@ -35,10 +35,4 @@ public class CategoryController : BaseController<CategoryAddDto, CategoryEditDto
     [Route("")]
     [HttpGet]
     public override Task<IEnumerable<CategoryDto>> GetAllAsync() => base.GetAllAsync();
-
-    [Authorization(PermissionSignatures.CategoryView)]
-    [Route("all/pagination")]
-    [HttpGet]
-    public override Task<PagableListDtoBase<CategoryDto>> GetAllPageable(PagableListDtoBase<CategoryDto> dto) => base.GetAllPageable(dto);
-
 }

@@ -24,6 +24,8 @@ public static class PermissionRoleSeed
             new { Id = id++, PermissionsId = permissions.Single(x => x.Code == PermissionSignatures.CanEditPayment).Id, RolesId = adminRoleId },
             new { Id = id++, PermissionsId = permissions.Single(x => x.Code == PermissionSignatures.CardView).Id, RolesId = adminRoleId },
             new { Id = id++, PermissionsId = permissions.Single(x => x.Code == PermissionSignatures.CanEditCard).Id, RolesId = adminRoleId },
+            new { Id = id++, PermissionsId = permissions.Single(x => x.Code == PermissionSignatures.UserCanEditCard).Id, RolesId = adminRoleId },
+            new { Id = id++, PermissionsId = permissions.Single(x => x.Code == PermissionSignatures.CardUserView).Id, RolesId = adminRoleId },
         };
 
         modelBuilder.Entity("PermissionRole").HasData(permissionRoles);

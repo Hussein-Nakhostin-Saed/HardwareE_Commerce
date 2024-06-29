@@ -4,28 +4,31 @@ namespace HardwareE_commerce.Controllers;
 
 [Route("api/order")]
 [ApiController]
-public class OrderController
+public class OrderController : SecureBaseController
 {
-    private readonly Orderserviec
-    public OrderController()
+    private readonly OrderService _orderService;
+    public OrderController(OrderService orderService)
     {
-        
+        _orderService = orderService;
     }
-
 
     [Authorization(PermissionSignatures.CanEditCategory)]
     [Route("")]
     [HttpPost]
-    public override Task InsertAsync(CategoryAddDto dto) => base.InsertAsync(dto);
+    public Task InsertAsync(OrderItemAddDto dto) => _orderService.InsertAsync(dto, UserContext.UserId);
+
+    [Authorization(PermissionSignatures.CanEditCategory)]
+    [Route("bycard/{cardid}")]
+    [HttpPost]
+    public Task InsertAsync(int cardid) => _orderService.InsertAsync(cardid);
 
     [Authorization(PermissionSignatures.CategoryView)]
     [Route("")]
     [HttpGet]
-    public override Task<IEnumerable<CategoryDto>> GetAllAsync() => base.GetAllAsync();
+    public async Task<IEnumerable<OrderDto>> GetAllAsync() => await _orderService.GetAllAsync();
 
     [Authorization(PermissionSignatures.CategoryView)]
-    [Route("all/pagination")]
+    [Route("user/all")]
     [HttpGet]
-    public override Task<PagableListDtoBase<CategoryDto>> GetAllPageable(PagableListDtoBase<CategoryDto> dto) => base.GetAllPageable(dto);
-
+    public async Task<IEnumerable<OrderDto>> GetAllByUserAsync() => await _orderService.GetAllByUserAsync(UserContext.UserId);
 }

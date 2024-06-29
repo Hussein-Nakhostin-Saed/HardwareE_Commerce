@@ -41,24 +41,4 @@ public class SecurityService
 
         await _userRepository.SaveChanges();
     }
-
-    public async Task ChangePassword(ChangePasswordDto dto)
-    {
-        var user = await _userRepository.GetById(dto.UserId);
-        if (user is not null && user.Password.Decrypt().Equals(dto.Password + "IranEnemiesWillDieSoon"))
-        {
-            if (dto.newPassword == dto.ConfirmNewPassword)
-            {
-                user.Password = (dto.newPassword + "IranEnemiesWillDieSoon").Encrypt();
-            }
-        }
-    }
-
-    public async Task SetRole(SetRoleDto dto)
-    {
-        var user = await _userRepository.GetById(dto.UserId);
-        user.RoleId = dto.RoleId;
-
-        await _userRepository.SaveChanges();
-    }
 }

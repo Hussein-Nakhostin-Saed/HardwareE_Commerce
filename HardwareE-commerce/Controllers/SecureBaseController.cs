@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace HardwareE_commerce;
 
@@ -13,8 +14,8 @@ public class SecureBaseController : ControllerBase
             if (_userContext is not null)
                 return _userContext;
 
-            var userId = User.Claims.Single(x => x.Type.Equals("UserId")).Value;
-            var userName = User.Claims.Single(x => x.Type.Equals("UserName")).Value;
+            var userId = User.Claims.Single(x => x.Type.Equals(ClaimTypes.UserData)).Value;
+            var userName = User.Claims.Single(x => x.Type.Equals(ClaimTypes.Name)).Value;
 
             var userContext = new UserContext(int.Parse(userId), userName);
 

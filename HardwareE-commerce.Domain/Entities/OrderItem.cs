@@ -9,6 +9,12 @@ public class OrderItem : MutableEntity
 
     public OrderItem()
     {
-        
+    }
+
+    public OrderItem(int productId, int quantity, decimal totalAmount)
+    {
+        ProductId = productId;
+        Quantity = quantity;
+        TotalAmount = totalAmount;
     }
 }

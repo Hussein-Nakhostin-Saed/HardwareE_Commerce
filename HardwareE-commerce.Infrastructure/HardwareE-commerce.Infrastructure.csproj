@@ -8,9 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Configurations\PaymentConfiguration.cs~RF1398569.TMP" />
     <None Remove="Configurations\PermissionsConfiguration.cs~RF19db925.TMP" />
     <None Remove="Configurations\UserConfiguration.cs~RF10afd6d.TMP" />
     <None Remove="Repositories\CardRepository.cs~RF2a6315e.TMP" />
+    <None Remove="Repositories\PaymentRepository.cs~RFd27283.TMP" />
     <None Remove="Repositories\RoleRepository.cs~RF1b7e6ed.TMP" />
     <None Remove="Seed\RoleSeed.cs~RF1f7eafd.TMP" />
     <None Remove="Seed\RoleSeed.cs~RF20944d3.TMP" />

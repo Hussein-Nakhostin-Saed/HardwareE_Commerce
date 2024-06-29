@@ -9,15 +9,19 @@
 
   <ItemGroup>
     <None Remove="Dtos\Add\OrderAddDto.cs~RF2b76fbd.TMP" />
+    <None Remove="Dtos\Add\OrderItemAddDto.cs~RFeb2553.TMP" />
+    <None Remove="Dtos\Add\ProductAddDto.cs~RFed85d8.TMP" />
     <None Remove="Dtos\Contracts\DtoBase.cs~RF9ad321.TMP" />
     <None Remove="Dtos\Contracts\PagableListDtoBase.cs~RFab0dbb.TMP" />
     <None Remove="Dtos\Edit\AddressEditDto.cs~RF1492932.TMP" />
     <None Remove="Dtos\Edit\RoleEditDto.cs~RF1b095f1.TMP" />
+    <None Remove="Dtos\View\OrderDto.cs~RFc3f7f.TMP" />
     <None Remove="Dtos\View\UserDto.cs~RF1468c6f.TMP" />
     <None Remove="Entities\Address.cs~RF1031c17.TMP" />
     <None Remove="Entities\Aggregations\MutableEntity.cs~RFf10470.TMP" />
     <None Remove="Entities\Order.cs~RF294c096.TMP" />
     <None Remove="Entities\OrderItem.cs~RF29e1179.TMP" />
+    <None Remove="Entities\OrderItem.cs~RFae640b.TMP" />
     <None Remove="Entities\Permission.cs~RF19831bd.TMP" />
     <None Remove="Entities\Permission.cs~RF1b36761.TMP" />
     <None Remove="Entities\Permission.cs~RF1c1770c.TMP" />

@@ -13,8 +13,21 @@ public class Product : MutableEntity, IEquatable<Product>
         
     }
 
+    public Product(int id, string name, int quantity, decimal price, string barcode, int categoryId)
+    {
+        Id = id;
+        Name = name;
+        Quantity = quantity;
+        Price = price;
+        BarCode = barcode;
+        CategoryId = categoryId;
+    }
+
     public bool Equals(Product? other)
     {
+        if(other is null)
+            return true;
+
         return (other.Name.Equals(Name) || other.BarCode == BarCode);
     }
 }

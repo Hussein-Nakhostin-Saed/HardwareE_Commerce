@@ -13,7 +13,7 @@ public class ProductSpecification : SpecificationBase<Product>
     {
         get
         {
-            Expression<Func<Product, bool>> spec = x => x.Equals(_repository.GetOrDefualt(c => c.BarCode.Equals(x.BarCode)).Result);
+            Expression<Func<Product, bool>> spec = x => !x.Equals(_repository.GetOrDefualt(c => c.BarCode.Equals(x.BarCode)).Result);
 
             return spec;
         }

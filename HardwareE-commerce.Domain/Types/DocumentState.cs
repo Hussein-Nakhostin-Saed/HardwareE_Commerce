@@ -4,5 +4,6 @@ public enum DocumentState
 {
     Registered,
     Modified,
-    Deleted
+    Deleted,
+    Draft,
 }

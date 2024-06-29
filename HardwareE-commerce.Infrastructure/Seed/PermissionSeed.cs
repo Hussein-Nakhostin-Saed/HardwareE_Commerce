@@ -22,6 +22,8 @@ public static class PermissionSeed
             new Permission(id++, "ویرایش فاکتور", PermissionSignatures.CanEditPayment),
             new Permission(id++, "سبد خرید", PermissionSignatures.CardView),
             new Permission(id++, "ویرایش سبد خرید", PermissionSignatures.CanEditCard),
+            new Permission(id++, "ویرایش سبد خرید توسط کاربر", PermissionSignatures.UserCanEditCard),
+            new Permission(id++, "سبد خرید کاربر", PermissionSignatures.CardUserView),
         };
 
         modelBuilder.Entity<Permission>().HasData(permissions);
